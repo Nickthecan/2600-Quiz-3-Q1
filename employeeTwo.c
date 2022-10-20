@@ -17,6 +17,8 @@ static PtrToEmployee searchEmployeeTable(PtrToConstEmployee ptr, int tableSize, 
             return (PtrToEmployee) ptr; 
     return NULL; 
 } 
+compareEmployeeNumber(PtrToConstEmployee ptr, int tableSize, const void *targetPtr, int (*functionPtr)(const void *, PtrToConstEmployee);
+compareEmployeeName(PtrToConstEmployee ptr, int tableSize, const void *targetPtr, int (*functionPtr)(const void *, PtrToConstEmployee);
 
 //The functionPtr will point to one of these comparison functions to perform a check 
 static int compareEmployeeNumber(const void *targetPtr, PtrToConstEmployee tableValuePtr) { 
