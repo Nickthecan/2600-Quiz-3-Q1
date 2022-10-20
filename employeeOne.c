@@ -1,5 +1,4 @@
 #include <string.h> 
-
 #include "employee.h" 
 
 PtrToEmployee searchEmployeeByNumber(PtrToConstEmployee ptr, int tableSize, long targetNumber){ 
@@ -14,8 +13,6 @@ PtrToEmployee searchEmployeeByNumber(PtrToConstEmployee ptr, int tableSize, long
      return NULL;   //this will only happen if no Employee number matches in loop above 
 } 
 
- 
-
 //Essentially the same functionality as above but comparing strings to check if equal 
 
 PtrToEmployee searchEmployeeByName(PtrToConstEmployee ptr, int tableSize, char * targetName){ 
@@ -27,6 +24,42 @@ PtrToEmployee searchEmployeeByName(PtrToConstEmployee ptr, int tableSize, char *
     { 
 
         if(strcmp(ptr->name,targetName) == 0) 
+
+            return (PtrToEmployee) ptr; 
+
+    } 
+
+    return NULL; 
+
+} 
+
+PtrToEmployee searchEmployeeByPhone(PtrToConstEmployee ptr, int tableSize, char * targetPhone){ 
+
+    const PtrToConstEmployee endPtr = ptr + tableSize; 
+
+    for(; ptr < endPtr; ptr++) 
+
+    { 
+
+        if(strcmp(ptr->name,targetPhone) == 0) 
+
+            return (PtrToEmployee) ptr; 
+
+    } 
+
+    return NULL; 
+
+} 
+
+PtrToEmployee searchEmployeeBySalary(PtrToConstEmployee ptr, int tableSize, char * targetSalary){ 
+
+    const PtrToConstEmployee endPtr = ptr + tableSize; 
+
+    for(; ptr < endPtr; ptr++) 
+
+    { 
+
+        if(strcmp(ptr->name,targetSalary) == 0) 
 
             return (PtrToEmployee) ptr; 
 
